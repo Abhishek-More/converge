@@ -2,7 +2,7 @@ import React from "react";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 
-export default function Navbar(props: { loggedIn: boolean }) {
+export default function Navbar(props: { loggedIn?: boolean }) {
   const [color, setColor] = useState(1);
 
   return (
