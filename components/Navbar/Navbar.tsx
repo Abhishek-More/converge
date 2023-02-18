@@ -14,7 +14,9 @@ export default function Navbar(props: { loggedIn?: boolean }) {
       top-0 z-50 flex w-screen justify-between fixed px-8 py-4 items-center `}
     >
       {/* <Image src="/logowhite.png" width={120} height={50} /> */}
-      <p className={`text-2xl text-1first font-semibold`}>Converge</p>
+      <Link href="/" className={`text-2xl text-1first font-semibold`}>
+        Converge
+      </Link>
       <div className="flex items-center gap-8">
         <Link className={`text-lg text-1first font-semibold`} href="/resources">
           {props.loggedIn ? "Resources" : ""}
