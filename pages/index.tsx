@@ -9,6 +9,39 @@ import { Session, getServerSession } from "next-auth";
 import authOptions from "./api/auth/[...nextauth]";
 import { Nullable } from "../lib/common";
 
+import axios from "axios";
+
+async function testCreatePost ()
+{
+  let testPost = {
+    anonymous: true,
+    communityId: "cle9ehvqj0000ugukfuy0oc26",
+    content: "this is a test post!",
+    tags: ["test"],
+    title: "Test Post",
+    toneIndicators: [],
+    toneIndicatorsStartStop: []
+  }
+
+  const request = await axios.post('/api/posts/create', testPost);
+  const data = await request.data;
+  console.log("done!");
+  console.log(request.status);
+}
+
+async function testCreateCommunity ()
+{
+  let testCommunity = {
+    description: "this is a test community! poggchamp!!!!1",
+    name: "Test Community"
+  }
+
+  const request = await axios.post('/api/communities/create', testCommunity);
+  const data = await request.data;
+  console.log("done!");
+  console.log(request.status);
+}
+
 export default function Home() {
   return (
     //Starter code for a landing page using tailwind
@@ -32,6 +65,9 @@ export default function Home() {
             pages/index.js
           </code>
         </p>
+
+        <button onClick={testCreatePost} className="p-6 border-black border-4 m-5 font-2xl">test create post</button>
+        <button onClick={testCreateCommunity} className="p-6 border-black border-4 m-5 font-2xl">test create community</button>
 
         <div>
           <button onClick={() => signOut()}>Sign out!</button>
