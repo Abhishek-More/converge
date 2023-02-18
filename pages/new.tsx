@@ -10,6 +10,7 @@ import { Nullable } from "../lib/common";
 import PostBoxNew from "@/components/Home/PostBoxNew";
 
 import axios from "axios";
+import Navbar from "@/components/Navbar/Navbar";
 
 async function testCreatePost() {
   let testPost = {
@@ -31,8 +32,8 @@ async function testCreatePost() {
 export default function New() {
   return (
     <div className="min-h-screen">
-      <div className="h-24 w-screen bg-gray-200"></div>
-      <div className="flex justify-center mt-16">
+      <Navbar loggedIn />
+      <div className="flex justify-center mt-32">
         <div className="w-[40vw] flex-shrink-0">
           <div className="flex flex-col gap-12 mt-4">
             <PostBoxNew />
