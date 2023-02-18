@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { GetServerSideProps } from "next";
 
 import useSWR from "swr";
@@ -8,35 +7,61 @@ import { signOut } from "next-auth/react";
 import { Session, getServerSession } from "next-auth";
 import authOptions from "./api/auth/[...nextauth]";
 import { Nullable } from "../lib/common";
+import Navbar from "@/components/Navbar/Navbar";
+import Post from "@/components/Home/Post";
 
 export default function Home() {
+  //get all posts from /api/posts/all using react-swr
+  const { data, error } = useSWR("/api/posts/all", fetcher);
+
   return (
-    //Starter code for a landing page using tailwind
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{" "}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{" "}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
-
-        <div>
-          <button onClick={() => signOut()}>Sign out!</button>
+    <div className="min-h-screen">
+      <div className="h-24 w-screen bg-gray-200"></div>
+      <div className="flex justify-between">
+        <div className="w-[10vw] flex-shrink-0 flex-grow-0">
+          <div className="bg-white bg"></div>
         </div>
-      </main>
+        <div className="w-[30vw] flex-shrink-0">
+          <div className="flex flex-col gap-12 mt-4">
+            <Post
+              title="312 Help with Muxes"
+              content="I need help understanding Muxes for CSCE 312. Can someone help me?"
+              time="1h ago"
+              author="Naveen Iyer"
+              emotion="Frustration: 90%"
+            />
+            <Post
+              title="312 Help with Muxes"
+              content="I need help understanding Muxes for CSCE 312. Can someone help me?"
+              time="1h ago"
+              author="Naveen Iyer"
+              emotion="Frustration: 90%"
+            />
+            <Post
+              title="312 Help with Muxes"
+              content="I need help understanding Muxes for CSCE 312. Can someone help me?"
+              time="1h ago"
+              author="Naveen Iyer"
+              emotion="Frustration: 90%"
+            />
+            <Post
+              title="312 Help with Muxes"
+              content="I need help understanding Muxes for CSCE 312. Can someone help me?"
+              time="1h ago"
+              author="Naveen Iyer"
+              emotion="Frustration: 90%"
+            />
+            <Post
+              title="312 Help with Muxes"
+              content="I need help understanding Muxes for CSCE 312. Can someone help me?"
+              time="1h ago"
+              author="Naveen Iyer"
+              emotion="Frustration: 90%"
+            />
+          </div>
+        </div>
+        <div className="w-[10vw]">hi</div>
+      </div>
     </div>
   );
 }
