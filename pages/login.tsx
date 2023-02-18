@@ -21,7 +21,7 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
 export default function Login() {
   return (
     <div className="flex justify-center w-screen">
-      <p>You are signed out!</p>
+      <p className="text-3xl">You are signed out!</p>
       <button onClick={() => signIn("google")}>Sign in with Google</button>
     </div>
   );
