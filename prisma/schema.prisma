@@ -15,8 +15,8 @@ model Post {
   author                  User?@relation(fields:[authorId], references:[id])
   authorId                String?
   anonymous               Boolean
-  community               Community @relation(fields: [communityId], references: [id])
-  communityId             Int
+  community               Community?@relation(fields: [communityId], references: [id])
+  communityId             String?
   datetime                DateTime
 
   title                   String
@@ -77,7 +77,7 @@ model VerificationToken {
 }
 
 model Community {
-  id          Int     @id @default(autoincrement())
+  id          String     @id @default(cuid())
   name        String
   description String
   posts       Post[]
