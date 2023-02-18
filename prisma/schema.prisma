@@ -24,7 +24,7 @@ model Post {
   tags                    String[]
   toneIndicators          String[]
   toneIndicatorsStartStop Int[]
-  sarcasmProb             Float
+  sarcasmProb             String
 }
 model Account {
   id                 String  @id @default(cuid())

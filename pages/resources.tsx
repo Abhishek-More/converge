@@ -3,7 +3,7 @@ import Resource from "@/components/Resources/Resource";
 
 export default function Home() {
   return (
-    <div className="h-full bg-[#bfd4db]">
+    <div className="h-full bg-[#bfd4db] py-16">
       <Navbar />
       <p className="text-[70px] font-bold text-[#043F74] mt-16 ml-60">
         Resources
