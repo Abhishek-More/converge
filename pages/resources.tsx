@@ -38,15 +38,9 @@ export default function Home() {
       />
       <hr className="border-2 border-[#86929d] my-32 mx-auto w-1/3" />
       <div id="audio-players" className="text-center mx-auto">
-        {/* https://blog.logrocket.com/building-audio-player-react/ */}
-        <p>White Noise</p>
-        <audio src="audio/white_noise.mp3" ref={whiteNoiseRef} controls loop className="block mx-auto mb-8" />
-        {/* <button onClick={() => {whiteNoiseRef.current.play();}}>yes</button> */}
         <AudioPlayer soundName="White Noise" audioFile="audio/white_noise.mp3" />
-        <p>Brown Noise</p>
-        <ReactAudioPlayer src="audio/brown_noise.mp3" controls loop className="block mx-auto mb-8" />
-        <p>Nature Sounds</p>
-        <ReactAudioPlayer src="audio/nature.mp3" controls loop className="block mx-auto mb-8" />
+        <AudioPlayer soundName="Brown Noise" audioFile="audio/brown_noise.mp3" />
+        <AudioPlayer soundName="Nature Sounds" audioFile="audio/nature.mp3" />
       </div>
       <hr className="border-2 border-[#86929d] my-32 mx-auto w-1/3" />
       <h2 className="text-center font-bold text-3xl">Fidget Toys</h2>

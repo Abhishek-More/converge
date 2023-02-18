@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function AudioPlayButton (props) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -6,6 +6,14 @@ export default function AudioPlayButton (props) {
   const togglePlayPause = () => {
     setIsPlaying((prev) => !prev);
   };
+  
+  useEffect(() => {
+    if (isPlaying) {
+      props.audioRef.current.play();
+    } else {
+        props.audioRef.current.pause();
+    }
+  }, [isPlaying, props.audioRef]);
 
   return (
     <div className="controls">

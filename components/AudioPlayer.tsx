@@ -4,8 +4,9 @@ import AudioPlayButton from './AudioPlayButton';
 export default function AudioPlayer (props) {
     // reference
     const audioRef = useRef();
-  
-    console.log(audioRef);
+
+    /* https://blog.logrocket.com/building-audio-player-react/ */
+
 
     return (
       <div className="audio-player">
