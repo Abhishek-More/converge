@@ -13,7 +13,7 @@ import { EffectComposer } from "@react-three/postprocessing";
 
 export default function Friend() {
   return (
-    <div id="canvas-container" className="cursor-grab active:cursor-grabbing">
+    <div id="canvas-container" className="cursor-grab active:cursor-grabbing w-[450px] h-[450px]">
         <Canvas>
           <ambientLight intensity={4} color="#FFFFFF" />
           <OrbitControls enableZoom={false} enablePan={false} enableDamping={true} dampingFactor={0.01} autoRotate={true} autoRotateSpeed={2.0} minPolarAngle={Math.PI / 3} maxPolarAngle={2 * Math.PI / 3} />

@@ -6,10 +6,18 @@ module.exports = {
   ],
   theme: {
     extend: {
+      
       colors: {
         transparent: "transparent",
         current: "currentColor",
         white: "#ffffff",
+        'chalk': '#242729',
+        'brightred': '#df4128',
+        'tahiti': '#3ab7bf',
+
+        fontFamily: {
+          poppins: ['Poppins', 'sans-serif'],
+        },
 
         //first = darker, second = lighter
         "1first": "#043F74", // navy
@@ -24,6 +32,8 @@ module.exports = {
         "5second": "#F3E7D8", // pale yellow
       },
     },
+
+    
   },
   plugins: [],
 };

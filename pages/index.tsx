@@ -58,7 +58,7 @@ export default function Home() {
   const arr = data.posts;
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen ">
       <Navbar loggedIn />
       <div className="fixed left-0 w-[20vw] h-full px-8 border-r-2">
         <div className="flex items-center gap-2 mb-4 mt-24">
