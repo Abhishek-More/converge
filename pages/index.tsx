@@ -10,6 +10,37 @@ import { Nullable } from "../lib/common";
 import Navbar from "@/components/Navbar/Navbar";
 import Post from "@/components/Home/Post";
 
+import axios from "axios";
+
+async function testCreatePost() {
+  let testPost = {
+    anonymous: true,
+    communityId: "cle9ehvqj0000ugukfuy0oc26",
+    content: "this is a test post!",
+    tags: ["test"],
+    title: "Test Post",
+    toneIndicators: [],
+    toneIndicatorsStartStop: [],
+  };
+
+  const request = await axios.post("/api/posts/create", testPost);
+  const data = await request.data;
+  console.log("done!");
+  console.log(request.status);
+}
+
+async function testCreateCommunity() {
+  let testCommunity = {
+    description: "this is a test community! poggchamp!!!!1",
+    name: "Test Community",
+  };
+
+  const request = await axios.post("/api/communities/create", testCommunity);
+  const data = await request.data;
+  console.log("done!");
+  console.log(request.status);
+}
+
 export default function Home() {
   //get all posts from /api/posts/all using react-swr
   const { data, error } = useSWR("/api/posts/all", fetcher);
