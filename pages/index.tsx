@@ -1,9 +1,13 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
+import { GetServerSideProps } from "next";
 
-const inter = Inter({ subsets: ["latin"] });
+import useSWR from "swr";
+import { fetcher } from "../lib/common";
+import { signOut } from "next-auth/react";
+
+import { Session, getServerSession } from "next-auth";
+import authOptions from "./api/auth/[...nextauth]";
+import { Nullable } from "../lib/common";
 
 export default function Home() {
   return (
@@ -28,7 +32,33 @@ export default function Home() {
             pages/index.js
           </code>
         </p>
+
+        <div>
+          <button onClick={() => signOut()}>Sign out!</button>
+        </div>
       </main>
     </div>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session: Nullable<Session> = await getServerSession(
+    context.req,
+    context.res,
+    authOptions
+  );
+
+  if (!session) {
+    console.log("No session found!");
+    return {
+      redirect: {
+        destination: "/login",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+};
