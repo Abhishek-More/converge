@@ -1,10 +1,10 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from "next";
 
-import { Nullable } from '../../../lib/common';
-import { Post, User } from '@prisma/client';
-import { getToken, JWT } from 'next-auth/jwt';
+import { Nullable } from "../../../lib/common";
+import { Post, User } from "@prisma/client";
+import { getToken, JWT } from "next-auth/jwt";
 
-import prisma from '../../../lib/prisma';
+import prisma from "../../../lib/prisma";
 
 /*
  * GET Request: Returns all posts
@@ -23,7 +23,10 @@ export default async function handler(
 
   const posts = await prisma.post.findMany({
     orderBy: {
-      title: 'asc',
+      datetime: "desc",
+    },
+    include: {
+      author: true,
     },
   });
 

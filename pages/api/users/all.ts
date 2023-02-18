@@ -1,10 +1,10 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from "next";
 
-import { Nullable } from '../../../lib/common';
-import { User } from '@prisma/client';
-import { getToken, JWT } from 'next-auth/jwt';
+import { Nullable } from "../../../lib/common";
+import { User } from "@prisma/client";
+import { getToken, JWT } from "next-auth/jwt";
 
-import prisma from '../../../lib/prisma';
+import prisma from "../../../lib/prisma";
 
 /*
  * GET Request: Returns all users
@@ -23,7 +23,7 @@ export default async function handler(
 
   const users = await prisma.user.findMany({
     orderBy: {
-      name: 'asc',
+      name: "asc",
     },
   });
 
