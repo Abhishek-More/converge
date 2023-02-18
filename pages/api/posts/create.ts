@@ -47,18 +47,24 @@ export default async function handler(
   try {
     //make an axios post request to the backend at localhost:5000/sarcasm/
 
-    const sarcasmResponse = await axios.post("http://127.0.0.1:8000/sarcasm/", {
-      text: body.content,
-    });
+    const sarcasmResponse = await axios
+      .post("http://127.0.0.1:8000/sarcasm/", {
+        text: body.content,
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(200);
+        res.send({});
+      });
 
     console.log(sarcasmResponse.data);
 
     let postObject = {
       anonymous: body.anonymous,
       authorId: user.id,
-      communityId: body.communityId,
       content: body.content,
       datetime: new Date(),
+      communityId: "cleaamv8l0000erd4etwk1xdl",
       sarcasmProb: sarcasmResponse.data || "neutral", // TODO MAKE THIS REALLY REAL
       tags: body.tags,
       title: body.title,
@@ -67,7 +73,8 @@ export default async function handler(
     };
 
     const createPost = await prisma.post.create({ data: postObject });
-  } catch {
+  } catch (error) {
+    console.log(error);
     res.status(400);
     res.send({});
     return;

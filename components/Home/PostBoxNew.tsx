@@ -1,6 +1,4 @@
 import React from "react";
-import { useState, useRef, useEffect } from "react";
-import { HiOutlineChatAlt } from "react-icons/hi";
 import { Input } from "@chakra-ui/react";
 import { Textarea } from "@chakra-ui/react";
 import { HiPencil, HiPlus } from "react-icons/hi";

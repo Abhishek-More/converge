@@ -1,5 +1,7 @@
+import Friend from "@/components/Friend/friend";
 import Navbar from "@/components/Navbar/Navbar";
 import Resource from "@/components/Resources/Resource";
+import ReactAudioPlayer from "react-audio-player";
 
 export default function Home() {
   return (
@@ -27,6 +29,18 @@ export default function Home() {
         author="by Lisa Jo Rudy"
         link="https://www.verywellhealth.com/what-does-it-mean-to-be-neurotypical-260047"
       />
+      <hr className="border-2 border-[#86929d] my-32 mx-auto w-1/3" />
+      <div id="audio-players" className="text-center mx-auto">
+        <p>White Noise</p>
+        <ReactAudioPlayer src="audio/white_noise.mp3" controls loop className="block mx-auto mb-8" />
+        <p>Brown Noise</p>
+        <ReactAudioPlayer src="audio/brown_noise.mp3" controls loop className="block mx-auto mb-8" />
+        <p>Nature Sounds</p>
+        <ReactAudioPlayer src="audio/nature.mp3" controls loop className="block mx-auto mb-8" />
+      </div>
+      <hr className="border-2 border-[#86929d] my-32 mx-auto w-1/3" />
+      <h2 className="text-center font-bold text-3xl">Fidget Toys</h2>
+      <Friend />
     </div>
   );
 }
