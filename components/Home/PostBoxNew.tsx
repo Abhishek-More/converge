@@ -63,12 +63,22 @@ export default function PostBoxNew() {
             <HiPencil />
             <p className="text-sm">Editing New Post...</p>
           </div>
-          <div
-            onClick={() => testCreatePost()}
-            className="flex cursor-pointer items-center gap-2 mt-8 px-4 py-2 rounded-md bg-1first max-w-[200px]"
-          >
-            <HiPlus className="text-white" />
-            <p className="text-base text-white">Create Post</p>
+          <div className="flex items-center gap-4">
+            <div>
+              <div
+                onClick={() => testCreatePost()}
+                className="flex cursor-pointer items-center gap-2 mt-8 px-4 py-2 rounded-md border-2 border-1first max-w-[200px] text-1first"
+              >
+                <p className="text-base text-1first">Save as Draft</p>
+              </div>
+            </div>
+            <div
+              onClick={() => testCreatePost()}
+              className="flex cursor-pointer items-center gap-2 mt-8 px-4 py-2 rounded-md bg-1first max-w-[200px]"
+            >
+              <HiPlus className="text-white" />
+              <p className="text-base text-white">Create Post</p>
+            </div>
           </div>
         </div>
       </div>
