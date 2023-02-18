@@ -10,7 +10,7 @@ export default function AudioPlayer (props) {
 
     return (
       <div className="audio-player">
-            <audio src={props.audioFile} ref={audioRef} loop />
+            <audio src={props.audioFile} ref={audioRef} loop volume={0.5} />
           <AudioPlayButton audioRef={audioRef} soundName={props.soundName} />
       </div>
     );

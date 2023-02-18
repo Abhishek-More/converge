@@ -13,6 +13,7 @@ import { Post } from "@prisma/client";
 import PostBox from "@/components/Home/PostBox";
 import { useState } from "react";
 import { HiChevronDoubleDown, HiChevronDown, HiPlus } from "react-icons/hi";
+import AudioPlayer from "@/components/AudioPlayer";
 
 import axios from "axios";
 import Link from "next/link";
@@ -70,6 +71,12 @@ export default function Home() {
             <Radio value="1">CSCE 312</Radio>
             <Radio value="2">ARCH 291</Radio>
             <Radio value="3">MATH 151</Radio>
+
+            <div id="audio-players" className="-ml-3 mt-48">
+              <AudioPlayer soundName="White Noise" audioFile="audio/white_noise.mp3" />
+              <AudioPlayer soundName="Brown Noise" audioFile="audio/brown_noise.mp3" />
+              <AudioPlayer soundName="Nature Sounds" audioFile="audio/nature.mp3" />
+            </div>
           </div>
         </RadioGroup>
         <div

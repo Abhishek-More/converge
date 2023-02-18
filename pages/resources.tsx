@@ -36,13 +36,13 @@ export default function Home() {
         author="by Lisa Jo Rudy"
         link="https://www.verywellhealth.com/what-does-it-mean-to-be-neurotypical-260047"
       />
-      <hr className="border-2 border-[#86929d] my-32 mx-auto w-1/3" />
+      <hr className="border-2 border-[#86929d] my-16 mx-auto w-1/3" />
       <div id="audio-players" className="text-center mx-auto">
         <AudioPlayer soundName="White Noise" audioFile="audio/white_noise.mp3" />
         <AudioPlayer soundName="Brown Noise" audioFile="audio/brown_noise.mp3" />
         <AudioPlayer soundName="Nature Sounds" audioFile="audio/nature.mp3" />
       </div>
-      <hr className="border-2 border-[#86929d] my-32 mx-auto w-1/3" />
+      <hr className="border-2 border-[#86929d] my-16 mx-auto w-1/3" />
       <h2 className="text-center font-bold text-3xl">Fidget Toys</h2>
       <div className="mx-auto w-fit">
         <Friend />

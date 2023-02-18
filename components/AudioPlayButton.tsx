@@ -17,7 +17,7 @@ export default function AudioPlayButton (props) {
 
   return (
     <div className="controls">
-        <button onClick={togglePlayPause} className={"border-4 border-1first rounded-md p-1 m-3 transition duration-500 " + (isPlaying ? "bg-1first text-white hover:bg-blue-600 " : "hover:bg-blue-200 ")}>
+        <button onClick={togglePlayPause} className={"text-sm border-4 border-1first rounded-md p-1 m-3 mt-0 transition duration-500 " + (isPlaying ? "bg-1first text-white hover:bg-blue-600 " : "hover:bg-blue-200 ")}>
             {props.soundName}
         </button>
     </div>
