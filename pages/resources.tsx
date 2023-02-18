@@ -3,7 +3,14 @@ import Navbar from "@/components/Navbar/Navbar";
 import Resource from "@/components/Resources/Resource";
 import ReactAudioPlayer from "react-audio-player";
 
+import { useRef, useState } from 'react';
+import AudioPlayButton from "@/components/AudioPlayButton";
+import AudioPlayer from "@/components/AudioPlayer";
+
 export default function Home() {
+  
+  let whiteNoiseRef = useRef();
+
   return (
     <div className="h-full bg-[#bfd4db] py-16">
       <Navbar />
@@ -31,8 +38,11 @@ export default function Home() {
       />
       <hr className="border-2 border-[#86929d] my-32 mx-auto w-1/3" />
       <div id="audio-players" className="text-center mx-auto">
+        {/* https://blog.logrocket.com/building-audio-player-react/ */}
         <p>White Noise</p>
-        <ReactAudioPlayer src="audio/white_noise.mp3" controls loop className="block mx-auto mb-8" />
+        <audio src="audio/white_noise.mp3" ref={whiteNoiseRef} controls loop className="block mx-auto mb-8" />
+        {/* <button onClick={() => {whiteNoiseRef.current.play();}}>yes</button> */}
+        <AudioPlayer soundName="White Noise" audioFile="audio/white_noise.mp3" />
         <p>Brown Noise</p>
         <ReactAudioPlayer src="audio/brown_noise.mp3" controls loop className="block mx-auto mb-8" />
         <p>Nature Sounds</p>
@@ -40,7 +50,9 @@ export default function Home() {
       </div>
       <hr className="border-2 border-[#86929d] my-32 mx-auto w-1/3" />
       <h2 className="text-center font-bold text-3xl">Fidget Toys</h2>
-      <Friend />
+      <div className="mx-auto w-fit">
+        <Friend />
+      </div>
     </div>
   );
 }
